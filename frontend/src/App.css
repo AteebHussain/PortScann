@@ -1,0 +1,97 @@
+/* General */
+
+/* ---------------------------------------------- */
+
+/*** Body ***/
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+  height: 100%;
+}
+
+/* ---------------------------------------------- */
+
+/*** App ***/
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.App.loading {
+	pointer-events: none; 
+	opacity: 0.7; 
+}
+
+/* ---------------------------------------------- */
+
+/*** Input Container ***/
+
+/* .input-container {
+  margin-bottom: 65px;
+}
+input {
+  margin-right: 17px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+/* ---------------------------------------------- */
+
+/*** Results Container ***/
+.results-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+.results-container h2 {
+  margin-top: 0;
+	font-size: 27px;
+}
+#five{
+  font-size: 18px;
+}
+.results-container ul {
+  padding-left: 20px;
+}
+.results-container li {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* ---------------------------------------------- */
+
+/*** Dark Mode toggle ***/
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+body.dark-mode input {
+  background-color: #333;
+  color: #fff;
+  border-color: #666;
+}
+body.dark-mode button {
+  background-color: #555;
+  border-color: #666;
+}
+body.dark-mode .results-container {
+  background-color: #444;
+}
+body.dark-mode ul li {
+  background-color: #333;
+}
