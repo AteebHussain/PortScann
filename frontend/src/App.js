@@ -1,9 +1,10 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import "./App.css";
 import "./PortScanner.css";
 import lanImage from "./lan.png";
+import Loading from './Loading';
 
 const App = () => {
 	const [targetHost, setTargetHost] = useState("");
@@ -12,6 +13,7 @@ const App = () => {
 	const [openPorts, setOpenPorts] = useState([]);
 	const [darkMode, setDarkMode] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
 	const handleScanPorts = () => {
 		setLoading(true);
@@ -43,6 +45,17 @@ const App = () => {
 		document.body.classList.toggle("dark-mode");
 	};
 
+	useEffect(() => {
+		// Simulate a delay for demonstration purposes
+		const delay = setTimeout(() => {
+		  setIsLoading(false);
+		}, 2000); // Adjust the delay time as needed
+	
+		// Clear the delay timer when the component unmounts (cleanup)
+		return () => clearTimeout(delay);
+	  }, []);
+
+
 	return (
 		<div className={`App ${darkMode ? "dark" : ""}`}>
 			<div className="toggle-switch" onClick={handleToggleDarkMode} style={{ color: darkMode ? '#fff' : '#333' }}>
@@ -55,6 +68,8 @@ const App = () => {
         			/>
         		<div className="slider"></div>
       		</div>
+
+			{isLoading && <Loading />}
 
 			{/* <h1>PortScann </h1> */}
 
